@@ -1,0 +1,21 @@
+.nav {
+  display: flex; /* Размещаем элементы в строку */
+  justify-content: center; /* Выравниваем по центру по горизонтали */
+}
+
+.link {
+  display: inline-block; /* Размещаем элементы в ряд */
+  padding: 10px;
+  text-decoration: none;
+  color: black; /* Добавил цвет текста */
+  margin: 0 10px; /* Добавил отступы между элементами */
+}
+
+.link:hover {
+  color: green;
+}
+
+.active {
+  background-color: blueviolet;
+  color: #fff;
+}
