@@ -1,0 +1,23 @@
+.searchCont {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+
+  height: 100vh;
+}
+.searchForm {
+  padding: 20px;
+}
+.inputForm {
+  width: 300px;
+  padding: 10px;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+.btn {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}

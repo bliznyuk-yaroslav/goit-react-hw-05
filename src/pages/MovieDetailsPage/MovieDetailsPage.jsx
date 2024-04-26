@@ -1,5 +1,5 @@
 import { useEffect, useState} from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, Outlet, useParams } from "react-router-dom";
 import {getMoviesById} from "../../showFilms"
 import css from "./MovieDetailsPage.module.css"
 
@@ -38,11 +38,12 @@ export default function MovieDetailsPage() {
            <p> Additional information</p>
            <ul>
             <li>
-                <Link >Cast</Link>
+                <Link to="cast">Cast</Link>
             </li>
             <li>
-                <Link >Reviews</Link>
+                <Link to="reviews" >Reviews</Link>
             </li>
+            <Outlet/>
            </ul>
         </div>
       );
