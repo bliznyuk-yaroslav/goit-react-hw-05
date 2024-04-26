@@ -11,11 +11,13 @@ export default function SearchForm({formSubmit,value }){
         formSubmit(query);
         setQuery('');
     }
-    const handleInput = e=>{
-        formSubmit(e.target.value.toLowerCase())
-    }
+    const handleInput = e => {
+        setQuery(e.target.value.toLowerCase().trim());
+      };
+    
     return(
         <div className={css.searchCont}>
+             <h2>Movie Search</h2>
         <form 
         className ={css.searchForm}
         onSubmit={handleSubmit}>
@@ -23,7 +25,7 @@ export default function SearchForm({formSubmit,value }){
             className={css.inputForm}
             type="text"
             placeholder="Search movie"
-            value={value}
+            value={query}
             onChange={handleInput} />
             <button className={css.btn} type="submit">Search </button>
         </form>

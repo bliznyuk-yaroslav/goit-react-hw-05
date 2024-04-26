@@ -47,6 +47,6 @@ export const getMovieSearch = async (query) => {
     `${baseUrl}/search/movie?query=${query}`,
     options
   );
-  console.log(response.data);
+  console.log(response.data.results);
   return response.data;
 };
