@@ -1,34 +1,32 @@
-import { useState } from "react";
-import css from './SearchBox.module.css'
-export default function SearchForm({formSubmit,value }){
-    const [query, setQuery]= useState(value);
-    const handleSubmit = e =>{
-        e.preventDefault();
-        if(query ===''){
-         console.log("error")
-         return
-        }
-        formSubmit(query);
-        setQuery('');
+ import css from "./SearchBox.module.css"
+export default function SearchBox({onSubmit}) {
+
+  const handleSubmit = (event) =>{
+    event.preventDefault();
+    const form = event.target
+    const searchText = form.elements.search.value;
+    if (searchText.trim() === '') {
+      console.log('Please enter a search query');
+      return;
     }
-    const handleInput = e => {
-        setQuery(e.target.value.toLowerCase().trim());
-      };
-    
-    return(
-        <div className={css.searchCont}>
-             <h2>Movie Search</h2>
+    onSubmit(searchText);
+       form.reset();
+  }
+    return (
+        <div className={css.cont}>
         <form 
         className ={css.searchForm}
         onSubmit={handleSubmit}>
-            <input 
-            className={css.inputForm}
+          <input
+          className={css.inputForm}
             type="text"
-            placeholder="Search movie"
-            value={query}
-            onChange={handleInput} />
-            <button className={css.btn} type="submit">Search </button>
+            autoComplete="off"
+            autoFocus
+            placeholder="Search movies"
+            name="search"
+          />
+          <button type="submit" className={css.btn} > Search</button>
         </form>
-        </div>
-    )
-}
+      </div>
+    );
+  }

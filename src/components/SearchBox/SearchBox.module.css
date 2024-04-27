@@ -1,3 +1,7 @@
+.cont {
+  display: flex;
+  justify-content: center;
+}
 .searchCont {
   display: flex;
   gap: 20px;

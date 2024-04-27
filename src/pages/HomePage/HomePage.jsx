@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getMovies } from "../../showFilms";
 import css from "./HomePage.module.css"
+import Loader from "../../components/Loader/Loader"
 import MovieList from '../../components/MovieList/MovieList'
 
 export default function HomePage() {
@@ -11,6 +12,7 @@ export default function HomePage() {
     useEffect(()=>{
       async function fetchMovies(){
         try{
+          setError(false);
             setLoading(true);
             const data = await getMovies();
             setMoviesString(data)
@@ -26,10 +28,13 @@ export default function HomePage() {
     },[])
 
     return (
-     <div>
-        <p className={css.text}> Trending today</p>
-        {loading && <p> Loading movies.......</p>}
-        {moviesString.length>0 && <MovieList movies={moviesString}/>}
+     <div className={css.cont}>
+      {loading && <Loader/>}
+      {error &&  <ErrorMessage/>}
+      {moviesString.length>0 && 
+        <p className={css.text}> Trending today</p>}
+      {moviesString.length>0 && 
+        <MovieList movies={moviesString}/>}
      </div>
     );
   }  

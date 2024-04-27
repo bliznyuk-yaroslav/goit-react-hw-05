@@ -1,14 +1,16 @@
 .nav {
   display: flex; /* Размещаем элементы в строку */
-  justify-content: center; /* Выравниваем по центру по горизонтали */
+  justify-content: center;
+  background-color: #5b92e5;
+  width: 100%; /* Выравниваем по центру по горизонтали */
 }
 
 .link {
-  display: inline-block; /* Размещаем элементы в ряд */
+  display: inline-block;
   padding: 10px;
   text-decoration: none;
-  color: black; /* Добавил цвет текста */
-  margin: 0 10px; /* Добавил отступы между элементами */
+  color: black;
+  margin: 0 10px;
 }
 
 .link:hover {

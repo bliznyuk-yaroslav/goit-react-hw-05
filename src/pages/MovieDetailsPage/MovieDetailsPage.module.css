@@ -1,13 +1,55 @@
 .cont {
-  padding: 20px;
   display: flex;
+  padding: 50px;
+  box-shadow: gray 0px 4px 2px -2px;
   gap: 20px;
 }
 .img {
   width: 300px;
-  height: 500px;
+  height: 450px;
   object-fit: cover;
 }
 .link {
   display: flex;
+}
+.btnBack {
+  margin: 50px;
+  padding: 8px 20px;
+  border-radius: 10px;
+  background-color: #0388cc;
+  border: 1px solid #0388cc;
+  color: #daedf7;
+  border: none;
+  cursor: pointer;
+}
+.btnBack:hover {
+  color: #fff;
+  background-color: #0374ae;
+}
+.item {
+  display: flex;
+}
+.itemLink {
+  list-style: none;
+}
+.link {
+  border: 1px solid #0388cc;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  width: 100px;
+  height: 30px;
+
+  padding: 8px 16px;
+  margin: 0px 16px 16px 0px;
+  font-size: 18px;
+  cursor: pointer;
+}
+.active {
+  background-color: blueviolet;
+  border: 1px solid blueviolet;
+  color: #fff;
+}
+.contLoad {
+  padding: 20px;
 }

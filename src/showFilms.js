@@ -12,7 +12,6 @@ export const getMovies = async () => {
     `${baseUrl}/trending/movie/day?language=en-US"`,
     options
   );
-  console.log(response.data.results);
   return response.data.results;
 };
 
@@ -21,7 +20,6 @@ export const getMoviesById = async (movieId) => {
     `${baseUrl}/movie/${movieId}?language=en-US`,
     options
   );
-  console.log(response.data);
   return response.data;
 };
 
@@ -30,7 +28,6 @@ export const getMoviesCast = async (movieId) => {
     `${baseUrl}/movie/${movieId}/credits`,
     options
   );
-  console.log(response.data.cast);
   return response.data.cast;
 };
 
@@ -39,14 +36,13 @@ export const getMoviesReviews = async (movieId) => {
     `${baseUrl}/movie/${movieId}/reviews`,
     options
   );
-  console.log(response.data);
   return response.data;
 };
+
 export const getMovieSearch = async (query) => {
   const response = await axios.get(
     `${baseUrl}/search/movie?query=${query}`,
     options
   );
-  console.log(response.data.results);
-  return response.data;
+  return response.data.results;
 };
