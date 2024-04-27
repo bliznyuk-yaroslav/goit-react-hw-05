@@ -1,10 +1,9 @@
 .nav {
-  display: flex; /* Размещаем элементы в строку */
+  display: flex;
   justify-content: center;
   background-color: #5b92e5;
-  width: 100%; /* Выравниваем по центру по горизонтали */
+  width: 100%;
 }
-
 .link {
   display: inline-block;
   padding: 10px;

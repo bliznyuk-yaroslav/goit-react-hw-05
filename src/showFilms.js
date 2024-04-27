@@ -1,10 +1,10 @@
-import axios from "axios";
-const baseUrl = "https://api.themoviedb.org/3";
+import axios from 'axios';
+const baseUrl = 'https://api.themoviedb.org/3';
 
 const options = {
   headers: {
     Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0NTE4ZmQ1OTI2YjExMzI5OGFjZDRmNGY4ZWEwYzI3NyIsInN1YiI6IjY2Mjk0YWUxMzc4MDYyMDE2NWRhN2I2NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.f1fGVyJijaYYO4JV-hu7G6Joni18Ov98dtbWiCM8010",
+      'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI0NTE4ZmQ1OTI2YjExMzI5OGFjZDRmNGY4ZWEwYzI3NyIsInN1YiI6IjY2Mjk0YWUxMzc4MDYyMDE2NWRhN2I2NyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.f1fGVyJijaYYO4JV-hu7G6Joni18Ov98dtbWiCM8010',
   },
 };
 export const getMovies = async () => {
@@ -15,7 +15,7 @@ export const getMovies = async () => {
   return response.data.results;
 };
 
-export const getMoviesById = async (movieId) => {
+export const getMoviesById = async movieId => {
   const response = await axios.get(
     `${baseUrl}/movie/${movieId}?language=en-US`,
     options
@@ -23,7 +23,7 @@ export const getMoviesById = async (movieId) => {
   return response.data;
 };
 
-export const getMoviesCast = async (movieId) => {
+export const getMoviesCast = async movieId => {
   const response = await axios.get(
     `${baseUrl}/movie/${movieId}/credits`,
     options
@@ -31,7 +31,7 @@ export const getMoviesCast = async (movieId) => {
   return response.data.cast;
 };
 
-export const getMoviesReviews = async (movieId) => {
+export const getMoviesReviews = async movieId => {
   const response = await axios.get(
     `${baseUrl}/movie/${movieId}/reviews`,
     options
@@ -39,7 +39,7 @@ export const getMoviesReviews = async (movieId) => {
   return response.data;
 };
 
-export const getMovieSearch = async (query) => {
+export const getMovieSearch = async query => {
   const response = await axios.get(
     `${baseUrl}/search/movie?query=${query}`,
     options
